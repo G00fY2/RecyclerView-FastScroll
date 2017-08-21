@@ -27,6 +27,7 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.support.annotation.Keep;
 import android.text.TextUtils;
+
 import com.simplecityapps.recyclerview_fastscroll.utils.Utils;
 
 public class FastScrollPopup {
@@ -196,9 +197,9 @@ public class FastScrollPopup {
         if (isVisible()) {
             // Calculate the dimensions and position of the fast scroller popup
             int edgePadding = recyclerView.getScrollBarWidth();
-            int bgPaddings = Math.round(((mBackgroundSize - mTextBounds.height()) / 5) * 5);
+            int bgPadding = (mBackgroundSize - mTextBounds.height()) / 2;
             int bgHeight = mBackgroundSize;
-            int bgWidth = Math.max(mBackgroundSize, mTextBounds.width() + (bgPaddings));
+            int bgWidth = Math.max(mBackgroundSize, mTextBounds.width() + (2 * bgPadding));
             if (mPosition == FastScroller.FastScrollerPopupPosition.CENTER) {
                 mBgBounds.left = (recyclerView.getWidth() - bgWidth) / 2;
                 mBgBounds.right = mBgBounds.left + bgWidth;
